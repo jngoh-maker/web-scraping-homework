@@ -1,205 +1,98 @@
-\# ALU Canvas Assignment Scraper
+# ALU Canvas Assignment Scraper
 
+A Playwright project that scrapes assignment information from my ALU Canvas Frontend Web Development course and saves it as a JSON file.
 
+## What it does
 
-This project uses \*\*Playwright\*\* to scrape assignment information from my ALU Canvas course.
+The scraper collects:
 
+* Assignment title
+* Due date
+* Marks
+* Submission status
+* Grade
+* Description
+* Assignment URL
 
+It currently scrapes 23 assignments.
 
-The scraper opens Canvas, allows me to log in manually using Google SSO and 2FA, then goes through the assignment pages and saves the information in a JSON file.
+I also created a simple web interface where the scraped assignments can be viewed, searched, and filtered.
 
+## Tools Used
 
+* JavaScript
+* Node.js
+* Playwright
+* HTML
+* CSS
+* JSON
 
-I also created a small web page to display the scraped assignments.
-
-
-
-\## What it collects
-
-
-
-For each assignment, the scraper collects:
-
-
-
-\* Assignment title
-
-\* Due date
-
-\* Marks
-
-\* Submission status
-
-\* Grade
-
-\* Description
-
-\* Canvas URL
-
-
-
-The scraper currently collects \*\*23 assignments\*\* from the Frontend Web Development course.
-
-
-
-\## Technologies
-
-
-
-\* JavaScript
-
-\* Node.js
-
-\* Playwright
-
-\* HTML
-
-\* CSS
-
-\* JSON
-
-
-
-\## Files
-
-
+## Project Structure
 
 ```text
-
 web-scraping-homework/
-
 │
-
 ├── UI/
-
 │   ├── index.html
-
 │   ├── script.js
-
 │   └── style.css
-
 │
-
 ├── scraper.js
-
-├── canvas\_assignments.json
-
+├── canvas_assignments.json
 ├── package.json
-
 ├── package-lock.json
-
 ├── .gitignore
-
 └── README.md
-
 ```
 
+## How to Run
 
-
-\## How to run the scraper
-
-
-
-First install the dependencies:
-
-
+Install the dependencies:
 
 ```bash
-
 npm install
-
 ```
 
-
-
-Then install the Playwright browser:
-
-
+Install Chromium for Playwright:
 
 ```bash
-
 npx playwright install chromium
-
 ```
-
-
 
 Run the scraper:
 
-
-
 ```bash
-
 node scraper.js
-
 ```
 
+Canvas will open in the browser. Log in with the ALU Google account if required.
 
-
-Canvas will open in a browser. If necessary, log in using the ALU Google account and complete 2FA.
-
-
-
-The scraped data will be saved in:
-
-
+The scraped data is saved in:
 
 ```text
-
-canvas\_assignments.json
-
+canvas_assignments.json
 ```
 
-
-
-\## How to view the dashboard
-
-
-
-Start a local server from the project folder:
-
-
+To view the web interface, start a local server:
 
 ```bash
-
 npx http-server .
-
 ```
-
-
 
 Then open:
 
-
-
 ```text
-
 http://127.0.0.1:8080/UI/
-
 ```
 
+## Note
 
+The Canvas login session is stored locally in `canvas-session` and is excluded from GitHub using `.gitignore`.
 
-The dashboard shows the assignments and allows them to be searched and filtered.
+## Author
 
-
-
-\## Note
-
-
-
-The `canvas-session` folder contains the saved browser session and is ignored by Git so that login information is not uploaded to GitHub.
-
-
-
-\## Author
-
-
-
-\*\*Juliana Ngoh\*\*
-
+Juliana Ngoh
 African Leadership University
-
 BSE Software Engineering
 
 
