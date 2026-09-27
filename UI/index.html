@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ALU Canvas Assignments</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div>
+                <p class="small-title">ALU • FRONTEND WEB DEVELOPMENT</p>
+                <h1>Canvas Assignments</h1>
+                <p class="subtitle">
+                    Your scraped ALU Canvas assignments in one place.
+                </p>
+            </div>
+
+            <div class="total-box">
+                <span id="totalAssignments">0</span>
+                <small>Assignments</small>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="controls">
+
+            <div class="search-container">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search assignments..."
+                >
+            </div>
+
+            <select id="statusFilter">
+                <option value="all">All assignments</option>
+                <option value="graded">Graded</option>
+                <option value="not-graded">Not graded</option>
+                <option value="submitted">Submitted</option>
+                <option value="not-submitted">Not submitted</option>
+            </select>
+
+        </section>
+
+
+        <section id="assignmentsContainer" class="assignments-grid">
+            <p class="loading">Loading assignments...</p>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Built with HTML, CSS, JavaScript & Playwright</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
