@@ -2,81 +2,65 @@
 
 
 
-A Node.js web scraping project built with Playwright to collect assignment information from an ALU Canvas course and display the results in a simple web interface.
+This project uses \*\*Playwright\*\* to scrape assignment information from my ALU Canvas course.
 
 
 
-\## Project Overview
+The scraper opens Canvas, allows me to log in manually using Google SSO and 2FA, then goes through the assignment pages and saves the information in a JSON file.
 
 
 
-This project automatically visits the ALU Canvas assignments page using Playwright, collects assignment information, and saves the scraped data into a JSON file.
+I also created a small web page to display the scraped assignments.
 
 
 
-The project also includes a simple dashboard that displays the scraped assignments in a user-friendly format.
+\## What it collects
 
 
 
-\## Features
+For each assignment, the scraper collects:
 
 
 
-\- Scrapes assignments from ALU Canvas
+\* Assignment title
 
-\- Uses Playwright browser automation
+\* Due date
 
-\- Supports manual Canvas login with Google SSO and 2FA
+\* Marks
 
-\- Uses a persistent browser session
+\* Submission status
 
-\- Extracts:
+\* Grade
 
-&#x20; - Assignment title
+\* Description
 
-&#x20; - Due date
-
-&#x20; - Marks
-
-&#x20; - Submission status
-
-&#x20; - Grade
-
-&#x20; - Assignment description
-
-&#x20; - Canvas assignment URL
-
-\- Saves the results to `canvas\_assignments.json`
-
-\- Includes a searchable assignment dashboard
-
-\- Includes assignment filtering
-
-\- Provides links back to the original Canvas assignments
-
-\- Responsive interface for different screen sizes
+\* Canvas URL
 
 
 
-\## Technologies Used
+The scraper currently collects \*\*23 assignments\*\* from the Frontend Web Development course.
 
 
 
-\- JavaScript
-
-\- Node.js
-
-\- Playwright
-
-\- HTML
-
-\- CSS
-
-\- JSON
+\## Technologies
 
 
 
-\## Project Structure
+\* JavaScript
+
+\* Node.js
+
+\* Playwright
+
+\* HTML
+
+\* CSS
+
+\* JSON
+
+
+
+\## Files
 
 
 
@@ -96,9 +80,9 @@ web-scraping-homework/
 
 │
 
-├── canvas\_assignments.json
-
 ├── scraper.js
+
+├── canvas\_assignments.json
 
 ├── package.json
 
@@ -107,4 +91,120 @@ web-scraping-homework/
 ├── .gitignore
 
 └── README.md
+
+```
+
+
+
+\## How to run the scraper
+
+
+
+First install the dependencies:
+
+
+
+```bash
+
+npm install
+
+```
+
+
+
+Then install the Playwright browser:
+
+
+
+```bash
+
+npx playwright install chromium
+
+```
+
+
+
+Run the scraper:
+
+
+
+```bash
+
+node scraper.js
+
+```
+
+
+
+Canvas will open in a browser. If necessary, log in using the ALU Google account and complete 2FA.
+
+
+
+The scraped data will be saved in:
+
+
+
+```text
+
+canvas\_assignments.json
+
+```
+
+
+
+\## How to view the dashboard
+
+
+
+Start a local server from the project folder:
+
+
+
+```bash
+
+npx http-server .
+
+```
+
+
+
+Then open:
+
+
+
+```text
+
+http://127.0.0.1:8080/UI/
+
+```
+
+
+
+The dashboard shows the assignments and allows them to be searched and filtered.
+
+
+
+\## Note
+
+
+
+The `canvas-session` folder contains the saved browser session and is ignored by Git so that login information is not uploaded to GitHub.
+
+
+
+\## Author
+
+
+
+\*\*Juliana Ngoh\*\*
+
+African Leadership University
+
+BSE Software Engineering
+
+
+
+
+
+
 
