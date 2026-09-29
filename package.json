@@ -11,6 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "jquery": "^4.0.0",
+    "jsdom": "^30.1.1",
     "playwright": "^1.63.0"
   }
 }
